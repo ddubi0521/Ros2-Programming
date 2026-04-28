@@ -1,0 +1,22 @@
+running develop
+running egg_info
+creating heart_robot_control.egg-info
+writing heart_robot_control.egg-info/PKG-INFO
+writing dependency_links to heart_robot_control.egg-info/dependency_links.txt
+writing entry points to heart_robot_control.egg-info/entry_points.txt
+writing requirements to heart_robot_control.egg-info/requires.txt
+writing top-level names to heart_robot_control.egg-info/top_level.txt
+writing manifest file 'heart_robot_control.egg-info/SOURCES.txt'
+reading manifest file 'heart_robot_control.egg-info/SOURCES.txt'
+writing manifest file 'heart_robot_control.egg-info/SOURCES.txt'
+running build_ext
+Creating /home/subin/cnu_ros2/heart_robot/src/install/heart_robot_control/lib/python3.10/site-packages/heart-robot-control.egg-link (link to .)
+Installing arm_wave script to /home/subin/cnu_ros2/heart_robot/src/install/heart_robot_control/lib/heart_robot_control
+
+Installed /home/subin/cnu_ros2/heart_robot/src/build/heart_robot_control
+running symlink_data
+creating /home/subin/cnu_ros2/heart_robot/src/install/heart_robot_control/share/ament_index
+creating /home/subin/cnu_ros2/heart_robot/src/install/heart_robot_control/share/ament_index/resource_index
+creating /home/subin/cnu_ros2/heart_robot/src/install/heart_robot_control/share/ament_index/resource_index/packages
+symbolically linking /home/subin/cnu_ros2/heart_robot/src/build/heart_robot_control/resource/heart_robot_control -> /home/subin/cnu_ros2/heart_robot/src/install/heart_robot_control/share/ament_index/resource_index/packages
+symbolically linking /home/subin/cnu_ros2/heart_robot/src/build/heart_robot_control/package.xml -> /home/subin/cnu_ros2/heart_robot/src/install/heart_robot_control/share/heart_robot_control

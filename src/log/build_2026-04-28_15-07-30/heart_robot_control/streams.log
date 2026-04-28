@@ -1,0 +1,17 @@
+[2.119s] Invoking command in '/home/subin/cnu_ros2/heart_robot/src/build/heart_robot_control': PYTHONPATH=/home/subin/cnu_ros2/heart_robot/src/build/heart_robot_control/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/subin/cnu_ros2/heart_robot/src/install/heart_robot_control/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/subin/cnu_ros2/heart_robot/src/build/heart_robot_control/build --no-deps symlink_data
+[2.878s] running develop
+[3.407s] running egg_info
+[3.407s] writing heart_robot_control.egg-info/PKG-INFO
+[3.407s] writing dependency_links to heart_robot_control.egg-info/dependency_links.txt
+[3.407s] writing entry points to heart_robot_control.egg-info/entry_points.txt
+[3.407s] writing requirements to heart_robot_control.egg-info/requires.txt
+[3.407s] writing top-level names to heart_robot_control.egg-info/top_level.txt
+[3.407s] reading manifest file 'heart_robot_control.egg-info/SOURCES.txt'
+[3.408s] writing manifest file 'heart_robot_control.egg-info/SOURCES.txt'
+[3.412s] running build_ext
+[3.412s] Creating /home/subin/cnu_ros2/heart_robot/src/install/heart_robot_control/lib/python3.10/site-packages/heart-robot-control.egg-link (link to .)
+[3.414s] Installing arm_wave script to /home/subin/cnu_ros2/heart_robot/src/install/heart_robot_control/lib/heart_robot_control
+[3.415s] 
+[3.415s] Installed /home/subin/cnu_ros2/heart_robot/src/build/heart_robot_control
+[3.416s] running symlink_data
+[3.540s] Invoked command in '/home/subin/cnu_ros2/heart_robot/src/build/heart_robot_control' returned '0': PYTHONPATH=/home/subin/cnu_ros2/heart_robot/src/build/heart_robot_control/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/subin/cnu_ros2/heart_robot/src/install/heart_robot_control/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/subin/cnu_ros2/heart_robot/src/build/heart_robot_control/build --no-deps symlink_data

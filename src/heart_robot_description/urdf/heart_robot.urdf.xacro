@@ -1,0 +1,749 @@
+<?xml version="1.0"?>
+<robot name="heart_robot" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <!-- Material -->
+  <material name="body_blue">
+    <color rgba="0.55 0.75 1.0 1.0"/>
+  </material>
+
+  <material name="cream_white">
+    <color rgba="0.98 0.97 0.92 1.0"/>
+  </material>
+
+  <material name="soft_gray">
+    <color rgba="0.75 0.78 0.82 1.0"/>
+  </material>
+
+  <material name="eye_black">
+    <color rgba="0.12 0.12 0.12 1.0"/>
+  </material>
+
+  <material name="cheek_red">
+    <color rgba="1.0 0.0 0.0 1.0"/>
+  </material>
+
+  <material name="cute_yellow">
+    <color rgba="1.0 0.85 0.0 1.0"/>
+  </material>
+
+  <!-- 몸통(base_link) -->
+  <link name="base_link">
+    <visual>
+      <origin xyz="0 0 0.39" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.32 0.26 0.38"/>
+      </geometry>
+      <material name="body_blue"/>
+    </visual>
+
+    <collision>
+      <origin xyz="0 0 0.39" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.32 0.26 0.38"/>
+      </geometry>
+    </collision>
+
+    <inertial>
+      <origin xyz="0 0 0.39" rpy="0 0 0"/>
+      <mass value="4.5"/>
+      <inertia ixx="0.08" ixy="0.0" ixz="0.0"
+               iyy="0.08" iyz="0.0"
+               izz="0.08"/>
+    </inertial>
+  </link>
+
+  <!-- 머리 -->
+  <link name="head_link">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.28 0.28 0.26"/>
+      </geometry>
+      <material name="cream_white"/>
+    </visual>
+
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.28 0.28 0.26"/>
+      </geometry>
+    </collision>
+
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="1.2"/>
+      <inertia ixx="0.015" ixy="0.0" ixz="0.0"
+               iyy="0.015" iyz="0.0"
+               izz="0.015"/>
+    </inertial>
+  </link>
+
+  <joint name="head_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="head_link"/>
+    <origin xyz="0.02 0 0.71" rpy="0 0 0"/>
+  </joint>
+
+  <!-- 눈 -->
+  <link name="left_eye_link">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <sphere radius="0.028"/>
+      </geometry>
+      <material name="eye_black"/>
+    </visual>
+  </link>
+
+  <joint name="left_eye_joint" type="fixed">
+    <parent link="head_link"/>
+    <child link="left_eye_link"/>
+    <origin xyz="0.145 0.06 0.03" rpy="0 0 0"/>
+  </joint>
+
+  <link name="right_eye_link">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <sphere radius="0.028"/>
+      </geometry>
+      <material name="eye_black"/>
+    </visual>
+  </link>
+
+  <joint name="right_eye_joint" type="fixed">
+    <parent link="head_link"/>
+    <child link="right_eye_link"/>
+    <origin xyz="0.145 -0.06 0.03" rpy="0 0 0"/>
+  </joint>
+
+  <!-- 볼 -->
+  <link name="left_cheek_link">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <sphere radius="0.018"/>
+      </geometry>
+      <material name="cheek_red"/>
+    </visual>
+  </link>
+
+  <joint name="left_cheek_joint" type="fixed">
+    <parent link="head_link"/>
+    <child link="left_cheek_link"/>
+    <origin xyz="0.145 0.10 -0.03" rpy="0 0 0"/>
+  </joint>
+
+  <link name="right_cheek_link">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <sphere radius="0.018"/>
+      </geometry>
+      <material name="cheek_red"/>
+    </visual>
+  </link>
+
+  <joint name="right_cheek_joint" type="fixed">
+    <parent link="head_link"/>
+    <child link="right_cheek_link"/>
+    <origin xyz="0.145 -0.10 -0.03" rpy="0 0 0"/>
+  </joint>
+
+  <!-- 왼팔 -->
+  <link name="left_upper_arm_link">
+    <visual>
+      <origin xyz="0 0 -0.09" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.07 0.07 0.18"/>
+      </geometry>
+      <material name="soft_gray"/>
+    </visual>
+
+    <collision>
+      <origin xyz="0 0 -0.09" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.07 0.07 0.18"/>
+      </geometry>
+    </collision>
+
+    <inertial>
+      <origin xyz="0 0 -0.09" rpy="0 0 0"/>
+      <mass value="0.5"/>
+      <inertia ixx="0.005" ixy="0.0" ixz="0.0"
+               iyy="0.005" iyz="0.0"
+               izz="0.005"/>
+    </inertial>
+  </link>
+
+  <joint name="left_shoulder_joint" type="revolute">
+    <parent link="base_link"/>
+    <child link="left_upper_arm_link"/>
+    <origin xyz="0 0.17 0.58" rpy="0 0 0"/>
+    <axis xyz="0 1 0"/>
+    <limit lower="-2.5" upper="0.5" effort="10" velocity="2.0"/>
+  </joint>
+
+  <link name="left_lower_arm_link">
+    <visual>
+      <origin xyz="0 0 -0.08" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.06 0.06 0.16"/>
+      </geometry>
+      <material name="cream_white"/>
+    </visual>
+
+    <collision>
+      <origin xyz="0 0 -0.08" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.06 0.06 0.16"/>
+      </geometry>
+    </collision>
+
+    <inertial>
+      <origin xyz="0 0 -0.08" rpy="0 0 0"/>
+      <mass value="0.4"/>
+      <inertia ixx="0.004" ixy="0.0" ixz="0.0"
+               iyy="0.004" iyz="0.0"
+               izz="0.004"/>
+    </inertial>
+  </link>
+
+  <joint name="left_elbow_joint" type="revolute">
+    <parent link="left_upper_arm_link"/>
+    <child link="left_lower_arm_link"/>
+    <origin xyz="0 0 -0.18" rpy="0 0 0"/>
+    <axis xyz="1 0 0"/>
+    <limit lower="-2.0" upper="2.0" effort="10" velocity="2.0"/>
+  </joint>
+
+  <link name="left_hand_link">
+    <visual>
+      <origin xyz="0 0 -0.045" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.03 0.10 0.09"/>
+      </geometry>
+      <material name="eye_black"/>
+    </visual>
+
+    <visual>
+      <origin xyz="0 0 0.01" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.025 0.05 0.03"/>
+      </geometry>
+      <material name="soft_gray"/>
+    </visual>
+
+    <collision>
+      <origin xyz="0 0 -0.045" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.03 0.10 0.09"/>
+      </geometry>
+    </collision>
+
+    <collision>
+      <origin xyz="0 0 0.01" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.025 0.05 0.03"/>
+      </geometry>
+    </collision>
+
+    <inertial>
+      <origin xyz="0 0 -0.02" rpy="0 0 0"/>
+      <mass value="0.15"/>
+      <inertia ixx="0.001" ixy="0.0" ixz="0.0"
+               iyy="0.001" iyz="0.0"
+               izz="0.001"/>
+    </inertial>
+  </link>
+
+  <joint name="left_wrist_joint" type="revolute">
+    <parent link="left_lower_arm_link"/>
+    <child link="left_hand_link"/>
+    <origin xyz="0 0 -0.14" rpy="0 0 0"/>
+    <axis xyz="0 0 1"/>
+    <limit lower="-1.0" upper="1.0" effort="5" velocity="2.0"/>
+  </joint>
+
+  <!-- 오른팔 -->
+  <link name="right_upper_arm_link">
+    <visual>
+      <origin xyz="0 0 -0.09" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.07 0.07 0.18"/>
+      </geometry>
+      <material name="soft_gray"/>
+    </visual>
+
+    <collision>
+      <origin xyz="0 0 -0.09" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.07 0.07 0.18"/>
+      </geometry>
+    </collision>
+
+    <inertial>
+      <origin xyz="0 0 -0.09" rpy="0 0 0"/>
+      <mass value="0.5"/>
+      <inertia ixx="0.005" ixy="0.0" ixz="0.0"
+               iyy="0.005" iyz="0.0"
+               izz="0.005"/>
+    </inertial>
+  </link>
+
+  <joint name="right_shoulder_joint" type="revolute">
+    <parent link="base_link"/>
+    <child link="right_upper_arm_link"/>
+    <origin xyz="0 -0.17 0.58" rpy="0 0 0"/>
+    <axis xyz="0 1 0"/>
+    <limit lower="-2.5" upper="0.5" effort="10" velocity="2.0"/>
+  </joint>
+
+  <link name="right_lower_arm_link">
+    <visual>
+      <origin xyz="0 0 -0.08" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.06 0.06 0.16"/>
+      </geometry>
+      <material name="cream_white"/>
+    </visual>
+
+    <collision>
+      <origin xyz="0 0 -0.08" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.06 0.06 0.16"/>
+      </geometry>
+    </collision>
+
+    <inertial>
+      <origin xyz="0 0 -0.08" rpy="0 0 0"/>
+      <mass value="0.4"/>
+      <inertia ixx="0.004" ixy="0.0" ixz="0.0"
+               iyy="0.004" iyz="0.0"
+               izz="0.004"/>
+    </inertial>
+  </link>
+
+  <joint name="right_elbow_joint" type="revolute">
+    <parent link="right_upper_arm_link"/>
+    <child link="right_lower_arm_link"/>
+    <origin xyz="0 0 -0.18" rpy="0 0 0"/>
+    <axis xyz="1 0 0"/>
+    <limit lower="-2.0" upper="2.0" effort="10" velocity="2.0"/>
+  </joint>
+
+  <link name="right_hand_link">
+    <visual>
+      <origin xyz="0 0 -0.045" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.03 0.10 0.09"/>
+      </geometry>
+      <material name="eye_black"/>
+    </visual>
+
+    <visual>
+      <origin xyz="0 0 0.01" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.025 0.05 0.03"/>
+      </geometry>
+      <material name="soft_gray"/>
+    </visual>
+
+    <collision>
+      <origin xyz="0 0 -0.045" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.03 0.10 0.09"/>
+      </geometry>
+    </collision>
+
+    <collision>
+      <origin xyz="0 0 0.01" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.025 0.05 0.03"/>
+      </geometry>
+    </collision>
+
+    <inertial>
+      <origin xyz="0 0 -0.02" rpy="0 0 0"/>
+      <mass value="0.15"/>
+      <inertia ixx="0.001" ixy="0.0" ixz="0.0"
+               iyy="0.001" iyz="0.0"
+               izz="0.001"/>
+    </inertial>
+  </link>
+
+  <joint name="right_wrist_joint" type="revolute">
+    <parent link="right_lower_arm_link"/>
+    <child link="right_hand_link"/>
+    <origin xyz="0 0 -0.14" rpy="0 0 0"/>
+    <axis xyz="0 0 1"/>
+    <limit lower="-1.0" upper="1.0" effort="5" velocity="2.0"/>
+  </joint>
+
+  <!-- 왼다리 (hip + knee) -->
+  <link name="left_upper_leg_link">
+    <visual>
+      <origin xyz="0 0 -0.10" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.09 0.09 0.20"/>
+      </geometry>
+      <material name="soft_gray"/>
+    </visual>
+
+    <collision>
+      <origin xyz="0 0 -0.10" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.09 0.09 0.20"/>
+      </geometry>
+    </collision>
+
+    <inertial>
+      <origin xyz="0 0 -0.10" rpy="0 0 0"/>
+      <mass value="0.7"/>
+      <inertia ixx="0.008" ixy="0.0" ixz="0.0"
+               iyy="0.008" iyz="0.0"
+               izz="0.008"/>
+    </inertial>
+  </link>
+
+  <joint name="left_hip_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="left_upper_leg_link"/>
+    <origin xyz="0 0.08 0.20" rpy="0 0 0"/>
+  </joint>
+
+  <link name="left_lower_leg_link">
+    <visual>
+      <origin xyz="0 0 -0.10" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.08 0.08 0.20"/>
+      </geometry>
+      <material name="cream_white"/>
+    </visual>
+
+    <collision>
+      <origin xyz="0 0 -0.10" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.08 0.08 0.20"/>
+      </geometry>
+    </collision>
+
+    <inertial>
+      <origin xyz="0 0 -0.10" rpy="0 0 0"/>
+      <mass value="0.6"/>
+      <inertia ixx="0.006" ixy="0.0" ixz="0.0"
+               iyy="0.006" iyz="0.0"
+               izz="0.006"/>
+    </inertial>
+  </link>
+
+  <joint name="left_knee_joint" type="fixed">
+    <parent link="left_upper_leg_link"/>
+    <child link="left_lower_leg_link"/>
+    <origin xyz="0 0 -0.20" rpy="0 0 0"/>
+  </joint>
+
+  <link name="left_foot_link">
+  <visual>
+    <origin xyz="0.05 0 -0.03" rpy="0 0 0"/> 
+    <geometry>
+      <box size="0.25 0.09 0.04"/>
+    </geometry>
+    <material name="cream_white"/>
+  </visual>
+
+  <collision>
+    <origin xyz="0.05 0 -0.03" rpy="0 0 0"/>
+    <geometry>
+      <box size="0.25 0.09 0.04"/>
+    </geometry>
+  </collision>
+
+  <inertial>
+    <origin xyz="0.05 0 -0.03" rpy="0 0 0"/>
+    <mass value="10.0"/> <inertia ixx="0.01" ixy="0.0" ixz="0.0"
+             iyy="0.05" iyz="0.0"
+             izz="0.05"/>
+  </inertial>
+</link>
+
+  <joint name="left_foot_joint" type="fixed">
+    <parent link="left_lower_leg_link"/>
+    <child link="left_foot_link"/>
+    <origin xyz="0 0 -0.20" rpy="0 0 0"/>
+  </joint>
+
+  <!-- 오른다리 (hip + knee) -->
+  <link name="right_upper_leg_link">
+    <visual>
+      <origin xyz="0 0 -0.10" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.09 0.09 0.20"/>
+      </geometry>
+      <material name="soft_gray"/>
+    </visual>
+
+    <collision>
+      <origin xyz="0 0 -0.10" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.09 0.09 0.20"/>
+      </geometry>
+    </collision>
+
+    <inertial>
+      <origin xyz="0 0 -0.10" rpy="0 0 0"/>
+      <mass value="0.7"/>
+      <inertia ixx="0.008" ixy="0.0" ixz="0.0"
+               iyy="0.008" iyz="0.0"
+               izz="0.008"/>
+    </inertial>
+  </link>
+
+  <joint name="right_hip_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="right_upper_leg_link"/>
+    <origin xyz="0 -0.08 0.20" rpy="0 0 0"/>
+  </joint>
+
+  <link name="right_lower_leg_link">
+    <visual>
+      <origin xyz="0 0 -0.10" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.08 0.08 0.20"/>
+      </geometry>
+      <material name="cream_white"/>
+    </visual>
+
+    <collision>
+      <origin xyz="0 0 -0.10" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.08 0.08 0.20"/>
+      </geometry>
+    </collision>
+
+    <inertial>
+      <origin xyz="0 0 -0.10" rpy="0 0 0"/>
+      <mass value="0.6"/>
+      <inertia ixx="0.006" ixy="0.0" ixz="0.0"
+               iyy="0.006" iyz="0.0"
+               izz="0.006"/>
+    </inertial>
+  </link>
+
+  <joint name="right_knee_joint" type="fixed">
+    <parent link="right_upper_leg_link"/>
+    <child link="right_lower_leg_link"/>
+    <origin xyz="0 0 -0.20" rpy="0 0 0"/>
+  </joint>
+
+  <link name="right_foot_link">
+    <visual>
+      <origin xyz="0.05 0 -0.03" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.25 0.09 0.04"/>
+      </geometry>
+      <material name="cream_white"/>
+    </visual>
+
+    <collision>
+      <origin xyz="0.05 0 -0.03" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.25 0.09 0.04"/>
+      </geometry>
+    </collision>
+
+    <inertial>
+      <origin xyz="0.05 0 -0.03" rpy="0 0 0"/>
+      <mass value="10.0"/>
+      <inertia ixx="0.01" ixy="0.0" ixz="0.0"
+               iyy="0.05" iyz="0.0"
+               izz="0.05"/>
+    </inertial>
+  </link>
+
+  <joint name="right_foot_joint" type="fixed">
+    <parent link="right_lower_leg_link"/>
+    <child link="right_foot_link"/>
+    <origin xyz="0 0 -0.20" rpy="0 0 0"/>
+  </joint>
+
+  <!-- 왼쪽 토끼귀 -->
+  <link name="left_bunny_ear_link">
+    <visual>
+      <origin xyz="0 0 0.08" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.055 0.035 0.16"/>
+      </geometry>
+      <material name="cream_white"/>
+    </visual>
+
+    <visual>
+      <origin xyz="0.002 0 0.08" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.03 0.018 0.12"/>
+      </geometry>
+      <material name="cream_white"/>
+    </visual>
+  </link>
+
+  <joint name="left_bunny_ear_joint" type="fixed">
+    <parent link="head_link"/>
+    <child link="left_bunny_ear_link"/>
+    <origin xyz="0.00 0.075 0.13" rpy="0 0.18 0.18"/>
+  </joint>
+
+  <!-- 오른쪽 토끼귀 -->
+  <link name="right_bunny_ear_link">
+    <visual>
+      <origin xyz="0 0 0.08" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.055 0.035 0.16"/>
+      </geometry>
+      <material name="cream_white"/>
+    </visual>
+
+    <visual>
+      <origin xyz="0.002 0 0.08" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.03 0.018 0.12"/>
+      </geometry>
+      <material name="cream_white"/>
+    </visual>
+  </link>
+
+  <joint name="right_bunny_ear_joint" type="fixed">
+    <parent link="head_link"/>
+    <child link="right_bunny_ear_link"/>
+    <origin xyz="0.00 -0.075 0.13" rpy="0 0.18 -0.18"/>
+  </joint>
+
+  <!-- Gazebo Materials -->
+  <gazebo>
+    <plugin name="gazebo_ros2_control" filename="libgazebo_ros2_control.so">
+      <parameters>$(find heart_robot_description)/config/controller.yaml</parameters>
+    </plugin>
+  </gazebo>
+
+  <gazebo reference="base_link">
+    <material>Gazebo/Blue</material>
+  </gazebo>
+
+  <gazebo reference="head_link">
+    <material>Gazebo/White</material>
+  </gazebo>
+
+  <gazebo reference="left_upper_arm_link">
+    <material>Gazebo/Grey</material>
+  </gazebo>
+
+  <gazebo reference="left_lower_arm_link">
+    <material>Gazebo/White</material>
+  </gazebo>
+
+  <gazebo reference="left_hand_link">
+    <material>Gazebo/Black</material>
+  </gazebo>
+
+  <gazebo reference="right_upper_arm_link">
+    <material>Gazebo/Grey</material>
+  </gazebo>
+
+  <gazebo reference="right_lower_arm_link">
+    <material>Gazebo/White</material>
+  </gazebo>
+
+  <gazebo reference="right_hand_link">
+    <material>Gazebo/Black</material>
+  </gazebo>
+
+  <gazebo reference="left_upper_leg_link">
+    <material>Gazebo/Grey</material>
+  </gazebo>
+
+  <gazebo reference="left_lower_leg_link">
+    <material>Gazebo/White</material>
+  </gazebo>
+
+  <gazebo reference="right_upper_leg_link">
+    <material>Gazebo/Grey</material>
+  </gazebo>
+
+  <gazebo reference="right_lower_leg_link">
+    <material>Gazebo/White</material>
+  </gazebo>
+
+  <gazebo reference="left_eye_link">
+    <material>Gazebo/Black</material>
+  </gazebo>
+
+  <gazebo reference="right_eye_link">
+    <material>Gazebo/Black</material>
+  </gazebo>
+
+  <gazebo reference="left_cheek_link">
+    <material>Gazebo/Red</material>
+  </gazebo>
+
+  <gazebo reference="left_foot_link">
+    <kp>1000000.0</kp> 
+    <kd>1.0</kd>        
+    <mu1>200.0</mu1>
+    <mu2>200.0</mu2>
+    <material>Gazebo/White</material>
+  </gazebo>
+
+  <gazebo reference="right_foot_link">
+    <kp>1000000.0</kp> 
+    <kd>1.0</kd>        
+    <mu1>200.0</mu1>
+    <mu2>200.0</mu2>
+    <material>Gazebo/White</material>
+  </gazebo>
+
+  <gazebo reference="right_cheek_link">
+    <material>Gazebo/Red</material>
+  </gazebo>
+
+  <gazebo reference="left_bunny_ear_link">
+    <material>Gazebo/White</material>
+  </gazebo>
+
+  <gazebo reference="right_bunny_ear_link">
+    <material>Gazebo/White</material>
+  </gazebo>
+
+<ros2_control name="GazeboSystem" type="system">
+  <hardware>
+    <plugin>gazebo_ros2_control/GazeboSystem</plugin>
+  </hardware>
+
+  <joint name="left_shoulder_joint">
+    <command_interface name="position"/>
+    <state_interface name="position">
+      <param name="initial_value">0.0</param> </state_interface>
+    <state_interface name="velocity"/>
+  </joint>
+
+  <joint name="right_shoulder_joint">
+    <command_interface name="position"/>
+    <state_interface name="position">
+      <param name="initial_value">0.0</param> </state_interface>
+    <state_interface name="velocity"/>
+  </joint>
+
+  <joint name="left_elbow_joint">
+    <command_interface name="position"/>
+    <state_interface name="position">
+      <param name="initial_value">0.0</param></state_interface>
+    <state_interface name="velocity"/>
+  </joint>
+
+  <joint name="right_elbow_joint">
+    <command_interface name="position"/>
+    <state_interface name="position">
+      <param name="initial_value">0.0</param></state_interface>
+    <state_interface name="velocity"/>
+  </joint>
+</ros2_control>
+
+</robot>

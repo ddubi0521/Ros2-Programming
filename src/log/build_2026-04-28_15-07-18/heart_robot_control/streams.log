@@ -1,0 +1,24 @@
+[2.302s] Invoking command in '/home/subin/cnu_ros2/heart_robot/src/build/heart_robot_control': PYTHONPATH=/home/subin/cnu_ros2/heart_robot/src/build/heart_robot_control/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/subin/cnu_ros2/heart_robot/src/install/heart_robot_control/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/subin/cnu_ros2/heart_robot/src/build/heart_robot_control/build --no-deps symlink_data
+[3.417s] running develop
+[3.997s] running egg_info
+[3.997s] creating heart_robot_control.egg-info
+[3.998s] writing heart_robot_control.egg-info/PKG-INFO
+[4.002s] writing dependency_links to heart_robot_control.egg-info/dependency_links.txt
+[4.002s] writing entry points to heart_robot_control.egg-info/entry_points.txt
+[4.002s] writing requirements to heart_robot_control.egg-info/requires.txt
+[4.002s] writing top-level names to heart_robot_control.egg-info/top_level.txt
+[4.002s] writing manifest file 'heart_robot_control.egg-info/SOURCES.txt'
+[4.007s] reading manifest file 'heart_robot_control.egg-info/SOURCES.txt'
+[4.009s] writing manifest file 'heart_robot_control.egg-info/SOURCES.txt'
+[4.016s] running build_ext
+[4.016s] Creating /home/subin/cnu_ros2/heart_robot/src/install/heart_robot_control/lib/python3.10/site-packages/heart-robot-control.egg-link (link to .)
+[4.019s] Installing arm_wave script to /home/subin/cnu_ros2/heart_robot/src/install/heart_robot_control/lib/heart_robot_control
+[4.019s] 
+[4.019s] Installed /home/subin/cnu_ros2/heart_robot/src/build/heart_robot_control
+[4.019s] running symlink_data
+[4.020s] creating /home/subin/cnu_ros2/heart_robot/src/install/heart_robot_control/share/ament_index
+[4.020s] creating /home/subin/cnu_ros2/heart_robot/src/install/heart_robot_control/share/ament_index/resource_index
+[4.020s] creating /home/subin/cnu_ros2/heart_robot/src/install/heart_robot_control/share/ament_index/resource_index/packages
+[4.020s] symbolically linking /home/subin/cnu_ros2/heart_robot/src/build/heart_robot_control/resource/heart_robot_control -> /home/subin/cnu_ros2/heart_robot/src/install/heart_robot_control/share/ament_index/resource_index/packages
+[4.021s] symbolically linking /home/subin/cnu_ros2/heart_robot/src/build/heart_robot_control/package.xml -> /home/subin/cnu_ros2/heart_robot/src/install/heart_robot_control/share/heart_robot_control
+[4.139s] Invoked command in '/home/subin/cnu_ros2/heart_robot/src/build/heart_robot_control' returned '0': PYTHONPATH=/home/subin/cnu_ros2/heart_robot/src/build/heart_robot_control/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/subin/cnu_ros2/heart_robot/src/install/heart_robot_control/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/subin/cnu_ros2/heart_robot/src/build/heart_robot_control/build --no-deps symlink_data

@@ -1,0 +1,3 @@
+[console_scripts]
+arm_wave = heart_robot_control.arm_wave:main
+

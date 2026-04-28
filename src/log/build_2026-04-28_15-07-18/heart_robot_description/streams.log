@@ -1,0 +1,48 @@
+[0.995s] Invoking command in '/home/subin/cnu_ros2/heart_robot/src/build/heart_robot_description': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/subin/cnu_ros2/heart_robot/src/install/heart_robot_control:/home/subin/cnu_ros2/heart_robot/install/heart_robot_control:/opt/ros/humble /usr/bin/cmake /home/subin/cnu_ros2/heart_robot/src/heart_robot_description -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/subin/cnu_ros2/heart_robot/src/install/heart_robot_description
+[1.368s] -- The C compiler identification is GNU 11.4.0
+[2.679s] -- The CXX compiler identification is GNU 11.4.0
+[3.707s] -- Detecting C compiler ABI info
+[4.224s] -- Detecting C compiler ABI info - done
+[4.240s] -- Check for working C compiler: /usr/bin/cc - skipped
+[4.241s] -- Detecting C compile features
+[4.241s] -- Detecting C compile features - done
+[4.248s] -- Detecting CXX compiler ABI info
+[4.667s] -- Detecting CXX compiler ABI info - done
+[4.695s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[4.696s] -- Detecting CXX compile features
+[4.697s] -- Detecting CXX compile features - done
+[4.702s] -- Found ament_cmake: 1.3.13 (/opt/ros/humble/share/ament_cmake/cmake)
+[5.178s] -- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter 
+[5.420s] -- Override CMake install command with custom implementation using symlinks instead of copying resources
+[5.751s] -- Configuring done
+[5.754s] -- Generating done
+[5.764s] -- Build files have been written to: /home/subin/cnu_ros2/heart_robot/src/build/heart_robot_description
+[5.805s] Invoked command in '/home/subin/cnu_ros2/heart_robot/src/build/heart_robot_description' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/subin/cnu_ros2/heart_robot/src/install/heart_robot_control:/home/subin/cnu_ros2/heart_robot/install/heart_robot_control:/opt/ros/humble /usr/bin/cmake /home/subin/cnu_ros2/heart_robot/src/heart_robot_description -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/subin/cnu_ros2/heart_robot/src/install/heart_robot_description
+[5.813s] Invoking command in '/home/subin/cnu_ros2/heart_robot/src/build/heart_robot_description': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/subin/cnu_ros2/heart_robot/src/install/heart_robot_control:/home/subin/cnu_ros2/heart_robot/install/heart_robot_control:/opt/ros/humble /usr/bin/cmake --build /home/subin/cnu_ros2/heart_robot/src/build/heart_robot_description -- -j8 -l8
+[5.933s] Invoked command in '/home/subin/cnu_ros2/heart_robot/src/build/heart_robot_description' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/subin/cnu_ros2/heart_robot/src/install/heart_robot_control:/home/subin/cnu_ros2/heart_robot/install/heart_robot_control:/opt/ros/humble /usr/bin/cmake --build /home/subin/cnu_ros2/heart_robot/src/build/heart_robot_description -- -j8 -l8
+[5.964s] Invoking command in '/home/subin/cnu_ros2/heart_robot/src/build/heart_robot_description': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/subin/cnu_ros2/heart_robot/src/install/heart_robot_control:/home/subin/cnu_ros2/heart_robot/install/heart_robot_control:/opt/ros/humble /usr/bin/cmake --install /home/subin/cnu_ros2/heart_robot/src/build/heart_robot_description
+[5.970s] -- Install configuration: ""
+[5.971s] -- Execute custom install script
+[5.977s] -- Symlinking: /home/subin/cnu_ros2/heart_robot/src/install/heart_robot_description/share/heart_robot_description/launch/__pycache__/display.launch.cpython-310.pyc
+[5.996s] -- Symlinking: /home/subin/cnu_ros2/heart_robot/src/install/heart_robot_description/share/heart_robot_description/launch/display.launch.py
+[6.016s] -- Symlinking: /home/subin/cnu_ros2/heart_robot/src/install/heart_robot_description/share/heart_robot_description/launch/gazebo.launch.py
+[6.065s] -- Symlinking: /home/subin/cnu_ros2/heart_robot/src/install/heart_robot_description/share/heart_robot_description/rviz/heart_robot.rviz
+[6.084s] -- Symlinking: /home/subin/cnu_ros2/heart_robot/src/install/heart_robot_description/share/heart_robot_description/rviz/heart_robot.rviz:Zone.Identifier
+[6.101s] -- Symlinking: /home/subin/cnu_ros2/heart_robot/src/install/heart_robot_description/share/heart_robot_description/urdf/heart_robot.urdf.xacro
+[6.120s] -- Symlinking: /home/subin/cnu_ros2/heart_robot/src/install/heart_robot_description/share/heart_robot_description/config/controller.yaml
+[6.142s] -- Symlinking: /home/subin/cnu_ros2/heart_robot/src/install/heart_robot_description/share/ament_index/resource_index/package_run_dependencies/heart_robot_description
+[6.185s] -- Symlinking: /home/subin/cnu_ros2/heart_robot/src/install/heart_robot_description/share/ament_index/resource_index/parent_prefix_path/heart_robot_description
+[6.206s] -- Symlinking: /home/subin/cnu_ros2/heart_robot/src/install/heart_robot_description/share/heart_robot_description/environment/ament_prefix_path.sh
+[6.231s] -- Symlinking: /home/subin/cnu_ros2/heart_robot/src/install/heart_robot_description/share/heart_robot_description/environment/ament_prefix_path.dsv
+[6.245s] -- Symlinking: /home/subin/cnu_ros2/heart_robot/src/install/heart_robot_description/share/heart_robot_description/environment/path.sh
+[6.266s] -- Symlinking: /home/subin/cnu_ros2/heart_robot/src/install/heart_robot_description/share/heart_robot_description/environment/path.dsv
+[6.317s] -- Symlinking: /home/subin/cnu_ros2/heart_robot/src/install/heart_robot_description/share/heart_robot_description/local_setup.bash
+[6.334s] -- Symlinking: /home/subin/cnu_ros2/heart_robot/src/install/heart_robot_description/share/heart_robot_description/local_setup.sh
+[6.356s] -- Symlinking: /home/subin/cnu_ros2/heart_robot/src/install/heart_robot_description/share/heart_robot_description/local_setup.zsh
+[6.372s] -- Symlinking: /home/subin/cnu_ros2/heart_robot/src/install/heart_robot_description/share/heart_robot_description/local_setup.dsv
+[6.388s] -- Symlinking: /home/subin/cnu_ros2/heart_robot/src/install/heart_robot_description/share/heart_robot_description/package.dsv
+[6.419s] -- Symlinking: /home/subin/cnu_ros2/heart_robot/src/install/heart_robot_description/share/ament_index/resource_index/packages/heart_robot_description
+[6.460s] -- Symlinking: /home/subin/cnu_ros2/heart_robot/src/install/heart_robot_description/share/heart_robot_description/cmake/heart_robot_descriptionConfig.cmake
+[6.487s] -- Symlinking: /home/subin/cnu_ros2/heart_robot/src/install/heart_robot_description/share/heart_robot_description/cmake/heart_robot_descriptionConfig-version.cmake
+[6.510s] -- Symlinking: /home/subin/cnu_ros2/heart_robot/src/install/heart_robot_description/share/heart_robot_description/package.xml
+[6.547s] Invoked command in '/home/subin/cnu_ros2/heart_robot/src/build/heart_robot_description' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/subin/cnu_ros2/heart_robot/src/install/heart_robot_control:/home/subin/cnu_ros2/heart_robot/install/heart_robot_control:/opt/ros/humble /usr/bin/cmake --install /home/subin/cnu_ros2/heart_robot/src/build/heart_robot_description
